@@ -1,0 +1,36 @@
+@startuml
+left to right direction
+
+package employee as g{
+    actor 水果销售 as fe1
+    actor 食品销售 as fe2
+}
+
+
+package "management layer" as M {
+    actor 经理 as m
+    actor 水果部领导 as fl1
+    actor 食品部领导 as fl2
+
+}
+package Menu {
+    usecase "销售记录管理" as UC1
+    usecase "人事管理" as UC2
+    usecase "仓储管理" as UC3
+    usecase "我的信息" as UC4
+    usecase "退出登录" as UC5
+}
+g --> UC1 : 只能查看自己的记录
+g --> UC4
+g --> UC5
+
+
+M --->UC1  :部门领导只能查看和编辑自己部门的信息
+M --->UC3  :部门领导只能查看和编辑自己部门的信息
+M ---> UC4
+M --->UC5
+
+m ---> UC2 :只有经理可以管理人事信息
+
+
+@enduml

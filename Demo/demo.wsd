@@ -1,0 +1,170 @@
+@startuml
+abstract class BaseDAO{
+    #getConn()
+    #close()
+    #SetParams()
+    #executeUpdate()
+    #setValue()
+    #executeComplexQuery()
+    #load()
+    #executeQuery()
+}
+class RecordDAO
+class StaffDAO{
+    String Table="staff"
+}
+class InventoryDAO{
+    String Table="inventory"
+}
+
+interface BaseAction<T>{
+    +add()
+    +del()
+    +getList()
+    +update()
+    +getById()
+    +getCount()
+    +getByFloatField()
+    +getByIntField()
+    +getByStringField()
+}
+note right of BaseAction
+    数据库增删改查动作接口
+end note
+
+
+RecordDAO <|-- BaseDAO
+RecordDAO <|- BaseAction
+InventoryDAO <|-- BaseDAO
+InventoryDAO <|- BaseAction
+StaffDAO <|-- BaseDAO
+StaffDAO <|- BaseAction
+note right of BaseDAO
+    数据库数据访问对象
+end note
+
+@enduml
+
+
+@startuml
+
+class BaseInventory{
+    #String kind;
+    #Integer id;
+    #String name;
+    #Float purchasePrice;
+    #Float salePrice;
+    #Float stock;
+    #String remark;
+    +get()
+    +set()
+}
+class FoodInventory{
+    String kind="food"
+}
+class FruitInventory{
+    String kind="fruit"
+}
+class BaseRecord{
+    #String kind;
+    # Integer id;
+    # String name;
+    # Float price;
+    # Float count;
+    # LocalDateTime time;
+    # String seller;
+    # Float total;
+    # String remark;
+    +get()
+    +set()
+}
+class FoodRecord{
+    String kind = "food"
+}
+class FruitRecord{
+    String kind = "fruit"
+}
+class StaffInfo{
+    - Integer id;
+    - String username;
+    - String password;
+    - String title;
+    - String branch;
+    - String name;
+    - String gender;
+    - Integer age;
+    - String phoneNumber;
+    - Float basicSalary;
+    
+    +get()
+    +set()
+}
+class AddInfo
+note right of BaseInventory
+    仓储类
+end note
+note right of BaseRecord
+    销售记录类
+end note
+note right of StaffInfo
+    员工信息
+end note
+note right of AddInfo
+    制造数据
+end note
+
+
+
+
+FoodInventory<|-- BaseInventory
+FruitInventory <|-- BaseInventory
+FoodRecord <|-- BaseRecord
+FruitRecord <|-- BaseRecord
+
+@enduml
+@startuml
+
+
+abstract class HttpServlet
+abstract class ViewBaseServlet{
+    +init()
+    #processTemplate()
+}
+class LoginServlet{
+    +doPost()
+    +doGet()
+}
+class RecordServlet{
+    +service()
+    -add()
+    -index()
+}
+class PersonnelServlet{
+    +service()
+    -index()
+    -add()
+    -del()
+    -edit()
+    -select()
+}
+class InventoryServlet{
+    +service()
+    -index()
+    -add()
+    -del()
+    -edit()
+    -select()
+}
+class UserInfoServlet{
+    +service()
+}
+note right of ViewBaseServlet
+    动态刷新网页内容
+end note
+ViewBaseServlet <|-- HttpServlet
+LoginServlet <|--ViewBaseServlet
+RecordServlet <|-- ViewBaseServlet
+PersonnelServlet <|-- ViewBaseServlet
+InventoryServlet <|-- ViewBaseServlet
+UserInfoServlet <|-- ViewBaseServlet
+@enduml

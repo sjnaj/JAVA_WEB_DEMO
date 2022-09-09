@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/add.css">
+	<script type="text/javascript" src="js/check.js"></script>
+</head>
+
+<body>
+	<div id="div_container">
+		<div id="div_fruit_list">
+			<p class="center f30">新增销售信息</p>
+			<!--<form action="add.do" method="post">-->
+			<!--<form th:action="@{/fruit.do}" method="post">-->
+			<!-- <form action="record.do" method="post"> -->
+				<!-- <input type="hidden" name="operate" value="add" /> -->
+				<table id="tbl_fruit">
+					<tr>
+						<th class="w20">名称</th>
+						<!-- <td><input type="text" name="fname" th:value="${fruit.fname}"/></td> -->
+						<td><input type="text" name="name" /></td>
+					</tr>
+					<tr>
+						<th class="w20">单价</th>
+						<td><input type="text" name="price" /></td>
+					</tr>
+					<tr>
+						<th class="w20">总量(￥）</th>
+						<td><input type="text" name="count" /></td>
+					</tr>
+					<tr>
+						<th class="w20">售货员</th>
+						<td><input type="text" name="seller" /></td>
+					</tr>
+					<tr>
+						<th class="w20">备注</th>
+						<td><input type="text" value="无" name="remark" /></td>
+					</tr>
+					<tr>
+						<th colspan="2">
+							<input type="submit" onclick="return checknull('record','add')" value="添加" />
+						</th>
+					</tr>
+				</table>
+			<!-- </form> -->
+		</div>
+	</div>
+</body>
+
+</html>
