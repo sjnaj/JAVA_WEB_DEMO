@@ -2,10 +2,12 @@ package com.dao;
 
 import java.util.List;
 
-import com.action.BaseAction;
+import com.myssm.basedao.*;
+
+import com.action.IBaseAction;
 import com.store.BaseInventory;
 
-public class InventoryDAO extends BaseDAO<BaseInventory> implements BaseAction<BaseInventory> {
+public class InventoryDAO extends BaseDAO<BaseInventory> implements IBaseAction<BaseInventory> {
 
     public String Table;// 数据表命名规定：kind+“inventorys”
 

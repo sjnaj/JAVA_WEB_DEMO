@@ -1,11 +1,12 @@
 package com.dao;
 
 import java.util.List;
+import com.myssm.basedao.*;
 
-import com.action.BaseAction;
+import com.action.IBaseAction;
 import com.store.BaseRecord;
 
-public class RecordDAO extends BaseDAO<BaseRecord> implements BaseAction<BaseRecord> {
+public class RecordDAO extends BaseDAO<BaseRecord> implements IBaseAction<BaseRecord> {
 
     public String Table;// 数据表命名规定：kind+“records”
 

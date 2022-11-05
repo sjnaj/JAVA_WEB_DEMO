@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+	<style type="text/css">
+		ul {
+			top: 10px;
+			/*设置导航栏的框框*/
+			width: 400px;
+			/*框框的宽度*/
+			height: 400px;
+			/*框框的长度*/
+			padding: 0px;
+			/*将框框的padding设置为零，不然会导致框框里的内容与框边缘有间隔*/
+			border: 1px solid #000;
+			/*添加边框*/
+
+			margin: 20px auto;
+		}
+
+		li {
+			list-style-type: none;
+			/* 去掉li前的点 */
+
+
+		}
+
+		a {
+			display: block;
+			/*将a变成块状*/
+			width: 400px;
+			/*设置块的宽度*/
+			height: 100px;
+			/*设置块的长度*/
+			font-family: Microsoft Yahei;
+			line-height: 50px;
+			/*设置字体在块中的高度*/
+			background-color: #2f4f4f;
+			margin: 0px 0px;
+			/*块里的高宽通过margin设置*/
+			color: #fff;
+			text-align: center;
+			/*字体居中*/
+			text-decoration: none;
+			/*去掉下划线*/
+			font-size: 20px;
+		}
+
+		a:hover {
+			background-color: #2f6f4f;
+		}
+	</style>
+	<script type="text/javascript" src="js/permission.js"></script>
+	<!-- 导入背景特效 -->
+	<script type="text/javascript" src="js/canvas.js" async="async"></script>
+
+</head>
+
+<body>
+	<div>
+		<ul>
+			<li><a href="">菜单</a></li>
+			<li><a href="record.do">销售记录管理</a></li>
+			<li id="super"><a href="personnel.do">人事管理</a></li>
+			<li id="medium"><a href="inventory.do">库存管理</a></li>
+			<li><a href="userinfo.do">我的信息</a></li>
+			<li><a href="login.html">退出登录</a></li>
+		</ul>
+	</div>
+
+</body>
+
+</html>

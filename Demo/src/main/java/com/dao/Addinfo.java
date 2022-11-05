@@ -2,6 +2,7 @@ package com.dao;
 
 import java.time.LocalDateTime;
 import java.util.*;
+import com.myssm.basedao.*;
 
 import com.store.FoodRecord;
 import com.store.FruitRecord;

@@ -1,0 +1,54 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/add.css">
+    <script src="js/check.js"></script>
+</head>
+
+<body th:inline="javascript">
+    <div id="div_container" th:with="info=${session.selected}">
+        <div id="div_fruit_list">
+            <p class="center f30">存储信息</p>
+
+            <table id="tbl_fruit">
+                <tr>
+                    <th class="w20">id</th>
+                    <th class="w20"> <input name="id" th:value="${info.id}" readonly></input>
+                    </th>
+                <tr>
+                    <th class="w20">名称</th>
+                    <th class="w20"> <input name="name" th:value="${info.name}"></input>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="w20">进价</th>
+                    <th class="w20"><input name="purchasePrice" th:value="${info.purchasePrice}"></input></th>
+                </tr>
+                <tr>
+                    <th class="w20">售价</th>
+                    <th class="w20"><input name="salePrice" th:value="${info.salePrice}"></input></th>
+                </tr>
+                <tr>
+                    <th class="w20">库存</th>
+                    <th class="w20"><input name="stock" th:value="${info.stock}"></input></th>
+
+                </tr>
+                <tr>
+                    <th class="w20">备注</th>
+                    <th class="w20"><input name="remark" th:value="${info.remark}"></input></th>
+
+                </tr>
+
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" onclick="return checknull('inventory','edit')" value="更改" />
+                    </th>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>

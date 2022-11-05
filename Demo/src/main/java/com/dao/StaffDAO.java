@@ -1,11 +1,12 @@
 package com.dao;
 
 import java.util.List;
+import com.myssm.basedao.*;
 
-import com.action.BaseAction;
+import com.action.IBaseAction;
 import com.store.StaffInfo;
 
-public class StaffDAO extends BaseDAO<StaffInfo> implements BaseAction<StaffInfo> {
+public class StaffDAO extends BaseDAO<StaffInfo> implements IBaseAction<StaffInfo> {
 
     private final String Table = "staff";
 
