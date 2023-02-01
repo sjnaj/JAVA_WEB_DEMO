@@ -45,17 +45,7 @@
 				1.1.6.RELEASE
 			</version>
 		</dependency>
-		<dependency>
-			<groupId>
-				org.unbescape
-			</groupId>
-			<artifactId>
-				unbescape
-			</artifactId>
-			<version>
-				1.1.6.RELEASE
-			</version>
-		</dependency>
+		
 		<dependency>
 			<groupId>
 				org.attoparser
@@ -117,20 +107,7 @@
 				1.7.21
 			</version>
 		</dependency>
-		<dependency>
-			<groupId>
-				org.slf4j
-			</groupId>
-			<artifactId>
-				slf4j-parent
-			</artifactId>
-			<version>
-				2.0.0
-			</version>
-			<type>
-				pom
-			</type>
-		</dependency>
+		
 		<dependency>
 			<groupId>
 				org.thymeleaf
@@ -229,6 +206,23 @@
 		<finalName>
 			demo
 		</finalName>
+		<sourceDirectory>src/main/java</sourceDirectory>
+        <testSourceDirectory>src/test/java</testSourceDirectory>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+            </testResource>
+        </testResources>
+        <outputDirectory>src/main/webapp/WEB-INF/classes</outputDirectory>
+        <testOutputDirectory>src/main/webapp/WEB-INF/classes</testOutputDirectory>		
 		<pluginManagement>
 			<!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
 			<plugins>
@@ -239,6 +233,20 @@
 					<version>
 						3.1.0
 					</version>
+					<configuration>
+						<excludeDefaultDirectories>true</excludeDefaultDirectories>
+
+					<filesets>
+						<fileset>
+						  <directory>target</directory>
+						  <followSymlinks>false</followSymlinks>
+						  <useDefaultExcludes>false</useDefaultExcludes>
+						  <excludes>
+							<exclude>classes/*.xml</exclude>
+						  </excludes>
+						</fileset>
+					  </filesets>
+					  </configuration>
 				</plugin>
 				<!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_war_packaging -->
 				<plugin>
@@ -256,6 +264,9 @@
 					<version>
 						3.8.0
 					</version>
+					<configuration>
+						<compilerArgument>-parameters</compilerArgument>
+					</configuration>
 				</plugin>
 				<plugin>
 					<artifactId>

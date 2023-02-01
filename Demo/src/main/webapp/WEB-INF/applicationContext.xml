@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-<beans>
-    <bean id="record" class="com.controllers.RecordController"/>
-    <bean id="inventory" class="com.controllers.InventoryController"/>
-    <bean id="personnel" class="com.controllers.PersonnelController"/> 
-    <bean id="userinfo" class="com.controllers.UserInfoController"/>
-</beans>

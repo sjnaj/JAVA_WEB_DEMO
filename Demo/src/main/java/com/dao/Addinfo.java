@@ -15,7 +15,7 @@ public class Addinfo {
 
     public static void main(String[] args) {
         RecordDAO dao = new RecordDAO();
-        dao.Table = "foodrecords";
+        dao.setTable("food");
         dao.getConn();
 
         LocalDateTime time = LocalDateTime.of(2021, 1, 1, 0, 0, 0);

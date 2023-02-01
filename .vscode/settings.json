@@ -13,6 +13,18 @@
             "database": "mysql",
             "username": "root",
             "password": "fengsc2017"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "javaweb",
+            "database": "mysql",
+            "username": "root"
         }
     ],
     "java.configuration.updateBuildConfiguration": "automatic",
